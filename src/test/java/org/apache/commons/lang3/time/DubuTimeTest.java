@@ -1,6 +1,5 @@
 package org.apache.commons.lang3.time;
 
-import com.sun.javafx.binding.StringFormatter;
 import org.junit.Test;
 
 import java.text.Format;
@@ -62,6 +61,14 @@ public class DubuTimeTest {
         assertNotEquals(d1, d2);
         assertNotEquals(d2, d3);
         assertNotEquals(d1, d3);
+
+    }
+
+
+    @Test
+    public void testDurationFormat(){
+
+        System.out.println(DurationFormatUtils.formatDurationWords(2*24*60*60*1000 + 238408230,true, false));
 
     }
 
