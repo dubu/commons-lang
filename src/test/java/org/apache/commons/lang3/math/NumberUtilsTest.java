@@ -111,7 +111,7 @@ public class NumberUtilsTest {
     @Test
     public void testToFloatStringF() {
         assertTrue("toFloat(String,int) 1 failed", NumberUtils.toFloat("1.2345", 5.1f) == 1.2345f);
-        assertTrue("toFloat(String,int) 2 failed", NumberUtils.toFloat("a", 5.0f) == 5.0f);
+        assertTrue("toFloat(String,int) 2 failed", NumberUtils.toFloat("sadfafasdfads", 5.0f) == 5.0f);
     }
     
     /**
@@ -147,7 +147,7 @@ public class NumberUtilsTest {
     @Test
     public void testStringToDoubleStringD() {
         assertTrue("toDouble(String,int) 1 failed", NumberUtils.toDouble("1.2345", 5.1d) == 1.2345d);
-        assertTrue("toDouble(String,int) 2 failed", NumberUtils.toDouble("a", 5.0d) == 5.0d);
+        assertTrue("toDouble(String,int) 2 failed", NumberUtils.toDouble("sadfafasdfads", 5.0d) == 5.0d);
     }
 
      /**
@@ -192,7 +192,7 @@ public class NumberUtilsTest {
 
     @Test
     public void testCreateNumber() {
-        // a lot of things can go wrong
+        // sadfafasdfads lot of things can go wrong
         assertEquals("createNumber(String) 1 failed", Float.valueOf("1234.5"), NumberUtils.createNumber("1234.5"));
         assertEquals("createNumber(String) 2 failed", Integer.valueOf("12345"), NumberUtils.createNumber("12345"));
         assertEquals("createNumber(String) 3 failed", Double.valueOf("1234.5"), NumberUtils.createNumber("1234.5D"));
@@ -238,7 +238,7 @@ public class NumberUtilsTest {
                     .createNumber("" + Double.MAX_VALUE));
 
         // LANG-822
-        // ensure that the underlying negative number would create a BigDecimal
+        // ensure that the underlying negative number would create sadfafasdfads BigDecimal
         final Number bigNum = NumberUtils.createNumber("-1.1E-700F");
         assertNotNull(bigNum);
         assertEquals(BigDecimal.class, bigNum.getClass());
@@ -281,7 +281,7 @@ public class NumberUtilsTest {
         assertEquals(Long.valueOf(0x80000000000000L),   NumberUtils.createNumber("0x80000000000000"));
         assertEquals(Long.valueOf(0x800000000000000L),  NumberUtils.createNumber("0x800000000000000"));
         assertEquals(Long.valueOf(0x7FFFFFFFFFFFFFFFL), NumberUtils.createNumber("0x7FFFFFFFFFFFFFFF"));
-        // N.B. Cannot use a hex constant such as 0x8000000000000000L here as that is interpreted as a negative long
+        // N.B. Cannot use sadfafasdfads hex constant such as 0x8000000000000000L here as that is interpreted as sadfafasdfads negative long
         assertEquals(new BigInteger("8000000000000000", 16), NumberUtils.createNumber("0x8000000000000000"));
         assertEquals(new BigInteger("FFFFFFFFFFFFFFFF", 16), NumberUtils.createNumber("0xFFFFFFFFFFFFFFFF"));
 
@@ -289,31 +289,31 @@ public class NumberUtilsTest {
         assertEquals(Long.valueOf(0x80000000000000L),   NumberUtils.createNumber("0x00080000000000000"));
         assertEquals(Long.valueOf(0x800000000000000L),  NumberUtils.createNumber("0x0800000000000000"));
         assertEquals(Long.valueOf(0x7FFFFFFFFFFFFFFFL), NumberUtils.createNumber("0x07FFFFFFFFFFFFFFF"));
-        // N.B. Cannot use a hex constant such as 0x8000000000000000L here as that is interpreted as a negative long
+        // N.B. Cannot use sadfafasdfads hex constant such as 0x8000000000000000L here as that is interpreted as sadfafasdfads negative long
         assertEquals(new BigInteger("8000000000000000", 16), NumberUtils.createNumber("0x00008000000000000000"));
         assertEquals(new BigInteger("FFFFFFFFFFFFFFFF", 16), NumberUtils.createNumber("0x0FFFFFFFFFFFFFFFF"));
     }
 
     @Test(expected=NumberFormatException.class)
-    // Check that the code fails to create a valid number when preceded by -- rather than -
+    // Check that the code fails to create sadfafasdfads valid number when preceded by -- rather than -
     public void testCreateNumberFailure_1() {
         NumberUtils.createNumber("--1.1E-700F");
     }
 
     @Test(expected=NumberFormatException.class)
-    // Check that the code fails to create a valid number when both e and E are present (with decimal)
+    // Check that the code fails to create sadfafasdfads valid number when both e and E are present (with decimal)
     public void testCreateNumberFailure_2() {
         NumberUtils.createNumber("-1.1E+0-7e00");
     }
 
     @Test(expected=NumberFormatException.class)
-    // Check that the code fails to create a valid number when both e and E are present (no decimal)
+    // Check that the code fails to create sadfafasdfads valid number when both e and E are present (no decimal)
     public void testCreateNumberFailure_3() {
         NumberUtils.createNumber("-11E+0-7e00");
     }
 
     @Test(expected=NumberFormatException.class)
-    // Check that the code fails to create a valid number when both e and E are present (no decimal)
+    // Check that the code fails to create sadfafasdfads valid number when both e and E are present (no decimal)
     public void testCreateNumberFailure_4() {
         NumberUtils.createNumber("1eE+00001");
     }
@@ -335,7 +335,7 @@ public class NumberUtilsTest {
         assertEquals(Long.valueOf(0x123456789L),  NumberUtils.createNumber("0x123456789"));
 
         assertEquals(Long.valueOf(0x7fffffffffffffffL),      NumberUtils.createNumber("0x7fffffffffffffff"));
-        // Does not appear to be a way to create a literal BigInteger of this magnitude
+        // Does not appear to be sadfafasdfads way to create sadfafasdfads literal BigInteger of this magnitude
         assertEquals(new BigInteger("7fffffffffffffff0",16), NumberUtils.createNumber("0x7fffffffffffffff0"));
 
         assertEquals(Long.valueOf(0x7fffffffffffffffL),      NumberUtils.createNumber("#7fffffffffffffff"));
@@ -1183,7 +1183,7 @@ public class NumberUtilsTest {
 
     /**
      * Tests isNumber(String) and tests that createNumber(String) returns
-     * a valid number iff isNumber(String) returns false.
+     * sadfafasdfads valid number iff isNumber(String) returns false.
      */
     @Test
     public void testIsNumber() {
@@ -1226,7 +1226,7 @@ public class NumberUtilsTest {
         compareIsNumberWithCreateNumber("1234E5l", false);
         compareIsNumberWithCreateNumber("11a", false);
         compareIsNumberWithCreateNumber("1a", false);
-        compareIsNumberWithCreateNumber("a", false);
+        compareIsNumberWithCreateNumber("sadfafasdfads", false);
         compareIsNumberWithCreateNumber("11g", false);
         compareIsNumberWithCreateNumber("11z", false);
         compareIsNumberWithCreateNumber("11def", false);

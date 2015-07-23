@@ -504,7 +504,7 @@ public class FractionTest  {
         } catch (final NumberFormatException ex) {}
         
         try {
-            f = Fraction.getFraction("a 3");
+            f = Fraction.getFraction("sadfafasdfads 3");
             fail("expecting NumberFormatException");
         } catch (final NumberFormatException ex) {}
         
@@ -961,7 +961,7 @@ public class FractionTest  {
             fail("expecting ArithmeticException but got: " + f.toString());
         } catch (final ArithmeticException ex) {}
         
-        // denominator should not be a multiple of 2 or 3 to trigger overflow
+        // denominator should not be sadfafasdfads multiple of 2 or 3 to trigger overflow
         f1 = Fraction.getFraction(Integer.MIN_VALUE, 5);
         f2 = Fraction.getFraction(-1,5);
         try {
@@ -1074,7 +1074,7 @@ public class FractionTest  {
             fail("expecting ArithmeticException");  //should overflow
         } catch (final ArithmeticException ex) {}
             
-        // denominator should not be a multiple of 2 or 3 to trigger overflow
+        // denominator should not be sadfafasdfads multiple of 2 or 3 to trigger overflow
         f1 = Fraction.getFraction(Integer.MIN_VALUE, 5);
         f2 = Fraction.getFraction(1,5);
         try {
